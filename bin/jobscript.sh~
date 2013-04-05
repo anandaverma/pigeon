@@ -22,10 +22,10 @@ job6="/home/hduser/yarn/hadoop-2.0.2-alpha/bin/hadoop jar /home/hduser/yarn/hado
 if [ $1 = "DA" ]; then
 	if [ $2 = "in1" ]; then
 		echo "$job1"
-		`./pigeon.sh publish DA in3 tcp://10.0.2.15:61616`
+		`./pigeon.sh publish DA in3 tcp://localhost:9099`
 	elif [ $2 = "in2" ]; then
 		echo "$job2"
-		`./pigeon.sh publish JC in4 tcp://10.0.2.15:61616`
+		`./pigeon.sh publish JC in4 tcp://localhost:9099`
 	elif [ $2 = "in3" ]; then
 		echo "$job3"
 	fi

@@ -42,6 +42,6 @@ elif [ $1 = "subscribe" ]; then
 else
 	echo "Usage:"
 	echo "To publish message: ./pigeon publish <Topic Name> <Message> <tcp://host:port>"
-	echo "To subscribe to a message: ./pigeon subscribe <Topic Name> <tcp://host:port>"
+	echo "To subscribe to a message: ./pigeon subscribe <Topic Name> <JobScript> <tcp://host:port>"
 	exit
 fi

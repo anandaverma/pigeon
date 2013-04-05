@@ -12,28 +12,40 @@ class SubscriberMain {
     private static String url = ActiveMQConnection.DEFAULT_BROKER_URL;
 
     public static void main(final String[] args) throws JMSException {
+	
+        while(true) {
+	    subscribe(args[0],args[1], args[2]);
+	}
 
-        ConnectionFactory connectionFactory = new ActiveMQConnectionFactory(args[2]);
-        Connection connection = connectionFactory.createConnection();
-        connection.start();
+    }
+
+    public static void subscribe(final String topicName, final String script, String url) throws JMSException
+    {
+
+	final ConnectionFactory connectionFactory = new ActiveMQConnectionFactory(url);
+        final Connection connection = connectionFactory.createConnection();
+
+	connection.start();
         
         Scanner in = new Scanner(System.in);
 
         Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
         
-        String topicname = args[0];
+        String topicname = topicName;
 
         Topic topic = session.createTopic(topicname);
 
         MessageConsumer consumer = session.createConsumer(topic);
 
-        MessageListener listner = new MessageListener() {
+        MessageListener listener = new MessageListener() {
             public void onMessage(Message message) {
                 try {
                     if (message instanceof TextMessage) {
                         TextMessage textMessage = (TextMessage) message;
-                        System.out.println("Received message '" + textMessage.getText() + "'");
-			Runtime.getRuntime().exec("gnome-terminal -e \""+"./"+args[1]+"\"");
+                        //System.out.println("Received message '" + textMessage.getText() + "'");
+			String receivedMessage = textMessage.getText();
+			String jobName = "gnome-terminal -x ./"+script+" "+topicName+" "+receivedMessage;
+			Runtime.getRuntime().exec(jobName);
                     }
                 } catch (Exception e) {
                     System.out.println("Caught:" + e);
@@ -42,14 +54,13 @@ class SubscriberMain {
             }
         };
         
-        consumer.setMessageListener(listner);
+        consumer.setMessageListener(listener);
         try {
-			System.in.read();
-		} catch (IOException e) {
+		System.in.read();
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 
         connection.close();
-
     }
 }    
