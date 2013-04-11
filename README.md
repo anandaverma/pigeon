@@ -13,5 +13,8 @@ We used ActiveMQ 5.8.0 Release to build and test our application.
 
 ##Steps to Run the Pigeon
 
-1. Run the ActiveMQ service on all the machines using following command: `~path-to-ActiveMQ-dir~$bin\activeMQ start`
-2. Run the publisher/subscriber using following command: `~path-to-pigeon-dir~$bin\pigeon.sh <publish|subscribe> <topicname> <jobscript> <host:port>`
+1. Run the ActiveMQ service on all the machines using following command: 
+`~path-to-ActiveMQ-dir~$bin\activeMQ start`
+2. Run the publisher/subscriber using following command: 
+`~path-to-pigeon-dir~$bin\pigeon.sh <publish|subscribe> <topicname> <jobscript> <host:port>`
+
