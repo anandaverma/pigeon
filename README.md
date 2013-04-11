@@ -15,12 +15,12 @@ We used ActiveMQ 5.8.0 Release to build and test our application.
 
 * Run the ActiveMQ service on all the machines: 
 
-`~path-to-ActiveMQ-dir~$bin\activemq start`
+`~path-to-ActiveMQ-bin-dir~$ ./activemq start`
 
 * Run the subscriber on all machines, listening for event notification: 
 
-`~path-to-pigeon-dir~$bin\pigeon.sh subscribe <topicname> <jobscript> <tcp://host:port>`
+`~path-to-pigeon-bin-dir~$ ./pigeon.sh subscribe <topicname> <jobscript> <tcp://host:port>`
 
 * Run the publisher on machine which publishes event notification message:
 
-`~path-to-pigeon-dir~$bin\pigeon.sh publish <topicname> <eventmessage> <tcp://host:port>`
+`~path-to-pigeon-dir-bin~$ ./pigeon.sh publish <topicname> <eventmessage> <tcp://host:port>`
