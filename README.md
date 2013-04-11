@@ -15,7 +15,7 @@ We used ActiveMQ 5.8.0 Release to build and test our application.
 
 * Run the ActiveMQ service on all the machines: 
 
-`~path-to-ActiveMQ-dir~$bin\activeMQ start`
+`~path-to-ActiveMQ-dir~$bin\activemq start`
 
 * Run the subscriber on all machines, listening for event notification: 
 
