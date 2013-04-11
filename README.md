@@ -2,7 +2,7 @@ Pigeon - An Event Driven Job Control Framework for Hadoop to help Chain Multiple
 
 ## Overview
 Hadoop MapReduce is a parallel computation framework for processing large and distributed data sets. 
-In many cases, users want to chain multiple MapReduce jobs to accomplishcomplex tasks. 
+In many cases, users want to chain multiple MapReduce jobs to accomplish complex tasks. 
 Usually, such complex tasks are data-driven with data funneled through a sequence of jobs. 
 In this project we have implemented a distributed notification system for Hadoop to help chain
 multiple MapReduce jobs based on events occurring in Hadoop cluster.
