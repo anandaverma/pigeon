@@ -13,11 +13,14 @@ We used ActiveMQ 5.8.0 Release to build and test our application.
 
 ##Steps to Run the Pigeon
 
-* Run the ActiveMQ service on all the machines using following command: 
+* Run the ActiveMQ service on all the machines: 
 
 `~path-to-ActiveMQ-dir~$bin\activeMQ start`
 
-* Run the publisher/subscriber using following command: 
+* Run the subscriber on all machines listening for event notification: 
 
-`~path-to-pigeon-dir~$bin\pigeon.sh <publish|subscribe> <topicname> <jobscript> <host:port>`
+`~path-to-pigeon-dir~$bin\pigeon.sh subscribe <topicname> <jobscript> <host:port>`
 
+* Run the publisher on machine which publishes notification:
+
+`~path-to-pigeon-dir~$bin\pigeon.sh publish <topicname> <eventmessage> <host:port>`
