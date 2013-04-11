@@ -23,4 +23,4 @@ We used ActiveMQ 5.8.0 Release to build and test our application.
 
 * Run the publisher on machine which publishes event notification message:
 
-`~path-to-pigeon-dir-bin~$ ./pigeon.sh publish <topicname> <eventmessage> <tcp://host:port>`
+`~path-to-pigeon-bin-dir~$ ./pigeon.sh publish <topicname> <eventmessage> <tcp://host:port>`
